@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+	<title>firebeez.online</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<!-- Font-Awesome -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="data/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="data/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="data/icons/favicon-16x16.png">
+	<link rel="manifest" href="data/site.webmanifest">
+</head>
+<body>
+	<div class="container">
+<!-- Image and text -->
+<!-- Navbar -->
+	<nav class="navbar navbar-dark fixed-top flex-wrap p-0 px-2 m-0 justify-content-between" style="background-color: #0c0e0f; border-bottom: #FFFFFF solid 1px;">
+		<div class="navbar-brand">
+			<img src="data/img/firebeez.png" width="45" height="45" class="d-inline-block" alt="">
+			<span class="fw-bold text-light">firebeez</span><span class="ps-1 text-danger fw-light">online</span>
+		</div>
+		
+		<div>
+			<small class="m-0 pe-2 align-text-bottom"></small>
+			<a href="#" class="text-muted">
+				<i class="fs-3 bi-person-circle"></i>
+			</a>
+		</div>
+	</nav>
+
+	<!-- login -->
+	<div class="row py-5 mt-5 justify-content-center">
+		<div class="row" style="width: 23rem;" >
+			<h2 class="fw-bold text-danger pb-5">
+				hello,<span class="text-secondary fw-light ms-2">there</span>
+			</h2>
+			<h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>
+			<hr class="hr" />
+		</div>
+		<div class="row justify-content-center">
+			<form action="/auth/login" method="POST" style="width: 23rem;" >
+				<div class="form-floating mb-3">
+					<input name="email" oninput="ValidateEmail(this)" type="email" class="form-control" id="inputEmail" placeholder="name@example.com">
+					<label for="inputEmail">Email address</label>
+					<div class="invalid-tooltip">Please provide a valid E-Mail.</div>
+				</div>
+				<div class="form-floating">
+					<input name="password" oninput="ValidatePW(this)" type="password" class="form-control" id="inputPassword" placeholder="Password">
+					<label for="inputPassword">Password</label>
+					<div class="invalid-tooltip">At least 8 characters.</div>
+				</div>
+					<button id="buttonSub" class="btn btn-secondary btn-lg mt-2 w-100" type="submit" disabled>Sign In</button>
+	{{!-- 			<div class="col">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="checkRemember">
+						<label class="form-check-label" for="checkRemember">Remember me</label>
+					</div>
+					<span class="small mb-5 pb-lg-2">
+						<p><a class="text-muted" href="#!">Forgot password?</a></p>
+					</span>
+				</div> --}}
+			</form>
+			<p>Don't have an account? <a href="#!" class="link-success">Register here</a></p>
+		</div>
+	</div>
+		{{#if message }}
+		<h4 class="alert {{type}} mt-4">{{message}}</h4>
+		{{/if}}
+	<!-- Navbar bot-->
+	<nav class="navbar navbar-dark fixed-bottom justify-content-between" style="background-color: #0c0e0f; border-top: #FFFFFF solid 1px;">
+		<div class="col-12 text-end text-muted pe-2">
+			<a href="#" class="text-muted fst-italic">Terms of Use</a> 
+			<span class="text-muted mx-2">|</span> 
+			<a href="#" class="text-muted fst-italic">Privacy Policy</a>
+		</div>
+	</nav>
+</div>
+
+<script src="/scripts/main.js"></script>
+</body>
+</html>
